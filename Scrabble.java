@@ -114,12 +114,14 @@ public class Scrabble {
 			if (!isWordInDictionary(input) && (MyString.subsetOf(input, hand))) {
 				System.out.println("No such word in the dictionary. Try again.");
 			}
-			if (MyString.subsetOf(input, hand)) {
-				System.out.println(input + "earned " + wordScore(input) + " points. Score: " + wordScore(input) + " points\n");
-				hand += MyString.remove(input, hand);
-			} else if (!MyString.subsetOf(input, hand)) {
-				System.out.println("Invalid word. Try again.");
+			else if (!MyString.subsetOf(input, hand)) {
+			System.out.println("Invalid word. Try again.");	
 			}
+			else  {
+				score =+ score + wordScore(input);
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + wordScore(input) + " points\n");
+				hand += MyString.remove(input, hand);
+			}	
 		}
 		if (hand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
