@@ -53,7 +53,7 @@ public class Scrabble {
 	public static boolean isWordInDictionary(String word) {
 	boolean result = false;	
 	for (int i = 0; i < DICTIONARY.length; i++) {
-		if (DICTIONARY[i] == word) {
+		if (word.equals(DICTIONARY[i])) {
 		result = true;
 		}
 	}
